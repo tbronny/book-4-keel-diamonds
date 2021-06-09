@@ -1,5 +1,7 @@
 import { getOrders } from "./database.js"
 
+document.addEventListener("click", (event) => {})
+
 const buildOrderListItem = (order) => {
     return `<li>
         Order #${order.id} was placed on ${order.timestamp}
@@ -22,4 +24,3 @@ export const Orders = () => {
 
     return html
 }
-
