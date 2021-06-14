@@ -26,13 +26,13 @@ const database = {
         { id: 5, metal: "Palladium", price: 1241.0 },
     ],
     customOrders: [
-        {
-            id: 1,
-            metalId: 3,
-            sizeId: 2,
-            styleId: 3,
-            timestamp: 1614659931693,
-        },
+        // {
+        //     id: 1,
+        //     metalId: 3,
+        //     sizeId: 2,
+        //     styleId: 3,
+        //     timestamp: 1614659931693,
+        // },
     ],
     orderBuilder: {},
 }
@@ -71,7 +71,7 @@ export const addCustomOrder = () => {
 
     // Add a new primary key to the object
     const lastIndex = database.customOrders.length - 1
-    newOrder.id = database.customOrders[lastIndex].id + 1
+    newOrder.id = lastIndex > -1 ? database.customOrders[lastIndex].id + 1 : 1
 
     // Add a timestamp to the order
     newOrder.timestamp = Date.now()
